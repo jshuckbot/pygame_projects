@@ -1,10 +1,10 @@
 import sys
 import pygame
+from pygame.sprite import Group
 from settings import Settings
 from ship import Ship
 from bullet import Bullet
-from pygame.sprite import Group
-
+from alien import Alien
 
 class AlienInvasion():
     """Класс для управления ресурсами и поведением игры"""
@@ -21,6 +21,8 @@ class AlienInvasion():
 
         self.ship = Ship(self)
         self.bullets = Group()
+        self.aliens = Group()
+        self.alien = Alien(self)
 
     def run_game(self):
         """Запуск основного цикла игры"""
